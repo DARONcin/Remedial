@@ -1,52 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js"></script>
   <title>Frontend Mentor | Contact form</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
-  Contact Us
+<div class="Contacto">
+  <form id="Contacto">
+    <h1>Contactanos</h1>
+    <div class="Item">
+      <div class="Firstname">
+        <label for="Firstname">Primer Nombre * <span class="Required"></span></label>
+        <input type="text" name="Firstname" id="Firstname">
+        <p class="Alert">Este campo es obligatorio</p>
+      </div>
+    </div>
 
-  First Name
-  This field is required
+    <div class="Item">
+      <div class="Lastname">
+        <label for="Lastname">Apellido * <span class="Required"></span></label>
+        <input type="text" name="Lastname" id="Lastname">
+        <p class="Alert">Este campo es obligatorio</p>
+      </div>
+    </div>
 
-  Last Name
-  This field is required
+    <div class="Item">
+      <label for="Email">Correo Electrónico * <span class="Required"></span></label>
+      <input type="email" name="Email" id="Email">
+      <p class="Alert">Introduce un correo válido</p>
+    </div>
 
-  Email Address
-  Please enter a valid email address
-  This field is required
+    <div class="Item">
+      <label for="QueryT">Tipo de query * <span class="Required"></span></label>
+      <div class="Radio">
+        <div class="Opc">
+          <input type="radio" id="Gral" name="QueryT" value="General Enquiry">
+          <label for="Gral"> Enquiry general</label>
+        </div>
+        <div class="Opc">
+          <input type="radio" id="Support" name="QueryT" value="Support Request">
+          <label for="Support">Solicitud de soporte</label>
+        </div>
+      </div>
+      <p class="Alert">Por favor selecciona un tipo de query</p>
+    </div>
 
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
+    <div class="Item">
+      <label for="Message">Mensaje <span class="Required"></span></label>
+      <textarea name="Message" id="Message" rows="4"></textarea>
+      <p class="Alert">Este campo es obligatorio</p>
+    </div>
 
-  Message
-  This field is required
+    <div class="Item">
+      <div>
+        <input type="checkbox" name="Consent" id="Consent">
+        <label for="Consent">Doy consentimiento para ser contactado <span class="Required"></span></label>
+      </div>
+      <p class="Alert">Para subir el formulario, primero da consentimiento para ser contactado</p>
+    </div>
+    
+    <button type="submit" id="Subtn" class="Subtn">Aceptar</button>
+  </form>
 
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
-
-  Submit
-
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div id="Success" class="Success">
+    <img src="./assets/images/icon-success-check.svg" alt="Success check">
+    <p>Mensaje enviado!</p>
   </div>
+
+  <p>Gracias por terminar el formulario!</p>
+</div>
+
+<div class="attribution">
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+  Coded by <a href="https://github.com/DARONcin">Daron Tarin</a>.
+</div>
+
 </body>
 </html>

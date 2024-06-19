@@ -1,0 +1,218 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --rosa: #ff6773;
+    --naranja: #f97220;
+    --verdec: #a7d6ce;
+    --verdeo: #126b6d;
+    --negro: #0b0b0b;
+    --gris: #d1d1d1;
+}
+
+body {
+    background-color: var(--verdec);
+    min-height: 100vh;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    color: var(--negro);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: .5rem;
+    margin-top: .5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: 1px solid var(--gris);
+    border-radius: .35rem;
+}
+
+input:focus,
+textarea:focus {
+    outline: 1px solid var(--verdeo);
+    border: 1px solid var(--verdeo);
+}
+
+input[type="text"].form-error,
+input[type="email"].form-error{
+    border: 1px solid var(--naranja);
+}
+
+.Required{
+    color: var(--verdeo);
+}
+
+.Alert{
+    display: none;
+    color: var(--naranja);
+    margin-top: .5rem;
+}
+
+.Alert.form-error{
+    display: block;
+}
+
+.Contacto{
+    background-color: var(--gris);
+    margin: 1rem;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.Contacto h1{
+    color: var(--negro);
+    margin-bottom: 1.25rem;
+}
+
+.Contacto .Item{
+    margin-bottom: 1.5rem;
+}
+
+.Contacto .Item:nth-child(1){
+    display: flex;
+    gap: 1rem;
+}
+
+.Contacto .Item:nth-child(3) .Radio{
+    margin-top: 5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.Contacto .Item:nth-child(3) .Radio .Opc{
+    cursor: pointer;
+    width: 100%;
+    padding: .5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    outline: 1px solid var(--gris);
+    border-radius: .35rem;
+}
+
+.Contacto .Item:nth-child(3) .Radio .Opc .active{
+    background-color: var(--verdec);
+}
+
+.Contacto .Item:nth-child(3) input[type="radio"]{
+    appearance: none;
+    width: .5rem;
+    height: .5rem;
+    outline: 2px solid var(--verdeo);
+    outline-offset: 3px;
+    border-radius: 50%;
+}
+
+.Contacto .Item:nth-child(3) input[type="radio"]:checked{
+    background-color: var(--verdeo);
+}
+
+.Contacto .Item:nth-child(3) .Radio .Opc label{
+    cursor: pointer;
+    width: 100%;
+}
+
+.Contacto .Item:nth-child(5){
+    margin-bottom: 2rem;
+}
+
+.Contacto .Item:nth-child(5) div{
+    display: flex;
+    gap: 1rem;
+}
+
+.Contacto .Item:nth-child(5) input[type="checkbox"]{
+    cursor: pointer;
+    accent-color: var(--verdeo);
+}
+
+.Contacto .Item:nth-child(5) label{
+    cursor: pointer;
+}
+
+.Contacto .Subtn{
+    cursor: pointer;
+    background-color: var(--verdeo);
+    color: var(--gris);
+    width: 100%;
+    padding: .75rem;
+    border: 0;
+    outline: 0;
+    border-radius: .35rem;
+}
+
+
+.Contacto .Subtn:hover{
+    background-color: var(--negro);
+}
+
+.Success{
+    background-color: var(--negro);
+    color: var(--verdeo);
+    width: max-content;
+    padding: 1rem;
+    pointer-events: none;
+    /*opacity: 0;*/
+    position: fixed;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: .35rem;
+}
+
+.Success .active{
+    display: block;
+    pointer-events: all;
+
+    animation-name: fadeOut;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes fadeOut{
+    0%,25%,50%,75%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.Success .Message-header{
+    color: var(--gris);
+    margin-bottom: .5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+@media (max-width: 300px) {
+    .Contacto .Item:nth-child(1){
+        flex-direction: column;
+    }
+    
+    .Contacto .Item:nth-child(3){
+        flex-direction: column;
+    }
+
+    textarea{
+        height: 200px;
+    }
+
+    .Success{
+        width: 35ch;
+        top: 5%;
+    }
+}
